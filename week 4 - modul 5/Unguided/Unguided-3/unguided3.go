@@ -3,26 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	var n int
-	fmt.Scan(&n)
-	fmt.Print(n," ")
-	for n > 1 {
-		if n%2 == 0 {
-			n = genap(n)
-		} else {
-			n = ganjil(n)
-		}
+	var x, y int
+	var hasil int = 1
+	fmt.Scan(&x,&y)
+	pangkat(x,y,hasil)
+}
+
+func pangkat(x, y, hasil int){
+	if y > 0{
+		hasil = x * hasil
+		pangkat(x,y-1,hasil)
+	}else{
+		fmt.Print(hasil)
 	}
 }
-
-func genap(n int)int{
-	fmt.Print(n * 1/2)
-	fmt.Print(" ")
-	return n * 1/2
-}
-
-func ganjil(n int)int{
-	fmt.Print(3*n+1)
-	fmt.Print(" ")
-	return 3*n+1
- }
